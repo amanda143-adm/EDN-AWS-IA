@@ -8,13 +8,7 @@ def conversor_de_moeda():
     print(f"Valor em dólares: $ {valor_em_dolares:.2f}")
     print(f"Valor em euros: € {valor_em_euros:.2f}")
 conversor_de_moeda()
-# Output:
-# Valor em reais: R$ 100.00
-# Valor em dólares: $ 19.23
-# Valor em euros: € 16.26
-# A função converte um valor em reais para dólares e euros, exibindo os resultados formatados.
-# A função calcula o valor em dólares e euros dividindo o valor em reais pelas respectivas taxas de câmbio.
-# O resultado é impresso com duas casas decimais para cada moeda.
+
     
     
     
