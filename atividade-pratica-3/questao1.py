@@ -10,6 +10,5 @@ def classificar_idade(idade):
     else:
         return "Idade inválida."
 
-# Entrada do usuário
 idade_usuario = int(input("Digite a sua idade: "))
 print(classificar_idade(idade_usuario))
