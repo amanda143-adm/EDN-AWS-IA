@@ -10,10 +10,19 @@ def classificador_numeros_pares_impares(lista):
 
     return (pares, impares)
 
-classificacao = input("Digite uma lista de números separados por vírgula: ")
-numeros = [int(num.strip()) for num in classificacao.split(',')]
+entrada = input("Digite números inteiros separados por vírgula (ex: 2, 5, 8, 13): ")
 
-classificacao = classificador_numeros_pares_impares(numeros)
-print("Classificação dos números:")
-print(f"Números pares: {classificacao[0]}")
-print(f"Números ímpares: {classificacao[1]}")
+try:
+    numeros = [int(num.strip()) for num in entrada.split(',') if num.strip() != '']
+
+    pares, impares = classificador_numeros_pares_impares(numeros)
+
+    print("\nClassificação dos números:")
+    print(f"Números pares: {sorted(pares)}")
+    print(f"Números ímpares: {sorted(impares)}")
+    print("=" * 40)
+    print(f"Total de números pares: {len(pares)}")
+    print(f"Total de números ímpares: {len(impares)}")
+
+except ValueError:
+    print("Erro: Certifique-se de digitar apenas números inteiros separados por vírgula.")
