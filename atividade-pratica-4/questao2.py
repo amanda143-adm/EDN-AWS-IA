@@ -4,18 +4,30 @@ def calcula_media(notas):
     return sum(notas) / len(notas)
 
 notas = []
+
+print("=== Calculadora de Média ===")
+print("Digite suas notas de 0 a 10.")
+print("Digite 'fim' para encerrar.\n")
+
 while True:
-    entrada = input("Digite uma nota (ou 'fim' para encerrar): ")
+    entrada = input("Informe uma nota (ou 'fim'): ")
     if entrada.lower() == 'fim':
         break
     try:
         nota = float(entrada)
         if 0 <= nota <= 10:
             notas.append(nota)
+            print(f"Nota {nota:.1f} adicionada com sucesso.")
         else:
             print("Nota inválida. Deve estar entre 0 e 10.")
     except ValueError:
-        print("Entrada inválida. Por favor, digite um número ou 'fim'.")
+        print("Entrada inválida. Digite um número ou 'fim'.")
 
-media = calcula_media(notas)
-print(f"A média das notas é: {media:.2f}")
+print("\n=== Resultado ===")
+if notas:
+    media = calcula_media(notas)
+    print(f"Notas digitadas: {', '.join(f'{n:.1f}' for n in notas)}")
+    print(f"Total de notas: {len(notas)}")
+    print(f"Média das notas: {media:.2f}")
+else:
+    print("Nenhuma nota válida foi inserida.")
